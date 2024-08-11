@@ -1,0 +1,124 @@
+/* Base styles */
+
+* {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* .dump {
+    height: 300px;
+} */
+
+body{
+    background-image: url(./image1.jpg);
+    background-size: cover;
+}
+
+
+.station {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+    margin-top :20%;    ;
+}
+
+button {
+    height: 100px;
+    width: 125px;
+    background-color: transparent;
+    border: 3px rgba(0, 0, 0, 0.356) solid;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: transform 0.3s ease;
+    transform: scale(0.9);
+    z-index: -1;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+button.hover::before, button:hover::before {
+    transform: scale(1.5);
+    opacity: 0.3;
+}
+
+button.hover, button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px currentColor;
+    text-shadow: 0 0 5px currentColor;
+}
+
+/* Unique hover effects for each button */
+button.clap:hover::before, button.clap.hover::before {
+    background: #ff00ff; /* Magenta */
+}
+
+button.hihat:hover::before, button.hihat.hover::before {
+    background: #00ff00; /* Lime */
+}
+
+button.kick:hover::before, button.kick.hover::before {
+    background: #00ffff; /* Cyan */
+}
+
+button.openhat:hover::before, button.openhat.hover::before {
+    background: #ff4500; /* OrangeRed */
+}
+
+button.boom:hover::before, button.boom.hover::before {
+    background: #ff1493; /* DeepPink */
+}
+
+button.ride:hover::before, button.ride.hover::before {
+    background: #1e90ff; /* DodgerBlue */
+}
+
+button.snare:hover::before, button.snare.hover::before {
+    background: #32cd32; /* LimeGreen */
+}
+
+button.tom:hover::before, button.tom.hover::before {
+    background: #ff6347; /* Tomato */
+}
+
+button.tink:hover::before, button.tink.hover::before {
+    background: #ffd700; /* Gold */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1024px) {
+    .station {
+        justify-content: space-around;
+    }
+
+    button {
+        height: 90px;
+        width: 110px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .station {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        margin-bottom: 10px;
+    }
+}
